@@ -1,6 +1,6 @@
 # Feature Implementation Plan — RVI-9: Product Card Image Behavior
 
-**Overall Progress:** `83%`
+**Overall Progress:** `100%`
 
 ## TLDR
 Extend `CardImage` and the `Variant` type to support primary/alt hover swap, mobile lapel shot priority, Big & Tall image logic, lazy loading, and CLS-safe aspect ratio — while architecting for future multi-image swipe/scroll.
@@ -46,5 +46,5 @@ Extend `CardImage` and the `Variant` type to support primary/alt hover swap, mob
   - [x] 🟩 Pass `cardIndex` to each `ProductCard` in the grid map
   - [x] 🟩 Pass `pageContext="default"` (BT context to be wired in a future story)
 
-- [ ] 🟥 **Step 6: Commit and push**
-  - [ ] 🟥 Commit all changes, push to remote
+- [x] 🟩 **Step 6: Commit and push**
+  - [x] 🟩 Commit all changes, push to remote
