@@ -1,6 +1,6 @@
 # Feature Implementation Plan — RVI-5: Project Scaffolding, Types, and Mock Data
 
-**Overall Progress:** `83%`
+**Overall Progress:** `100%`
 
 ## TLDR
 Scaffold a Next.js 14 + Tailwind + TypeScript project in the `mens-formalwear` repo and create the typed data layer with 8-10 mock products so component development can begin in Phase 2.
@@ -44,5 +44,5 @@ Scaffold a Next.js 14 + Tailwind + TypeScript project in the `mens-formalwear` r
   - [x] 🟩 Product with promo message
   - [x] 🟩 Product without promo and without rating
 
-- [ ] 🟨 **Step 6: Initial commit and push**
-  - [ ] 🟨 Add `.gitignore`, commit all scaffolding, push to `mens-formalwear` remote
+- [x] 🟩 **Step 6: Initial commit and push**
+  - [x] 🟩 Add `.gitignore`, commit all scaffolding, push to `mens-formalwear` remote
