@@ -1,7 +1,7 @@
 import { Product } from "@/types/product";
 
 export const products: Product[] = [
-  // 1. No image on default variant — tests "No image available" fallback
+  // 1. No image on default variant — tests fallback; has alt + lapel on other variants
   {
     id: "prod-001",
     brand: "Joseph Abboud",
@@ -15,6 +15,7 @@ export const products: Product[] = [
         id: "v-001a",
         color: { name: "Charcoal", hex: "#36454F" },
         imageUrl: null,
+        // No alt, no lapel — tests full fallback path
         offerPrice: 999.99,
         listPrice: 1000.99,
         url: "/p/joseph-abboud-modern-fit-suit-coat-charcoal",
@@ -24,6 +25,8 @@ export const products: Product[] = [
         id: "v-001b",
         color: { name: "Navy", hex: "#1B2A4A" },
         imageUrl: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop",
+        altImages: ["https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop"],
+        lapelImageUrl: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&h=800&fit=crop",
         offerPrice: 999.99,
         listPrice: 1000.99,
         url: "/p/joseph-abboud-modern-fit-suit-coat-navy",
@@ -33,6 +36,8 @@ export const products: Product[] = [
         id: "v-001c",
         color: { name: "Light Gray", hex: "#C0C0C0" },
         imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&h=800&fit=crop",
+        // No lapel — tests mobile fallback to primary
+        altImages: ["https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&h=800&fit=crop"],
         offerPrice: 999.99,
         listPrice: 1000.99,
         url: "/p/joseph-abboud-modern-fit-suit-coat-light-gray",
@@ -41,7 +46,7 @@ export const products: Product[] = [
     ],
   },
 
-  // 2. BEST SELLER badge — tests blue badge overlay
+  // 2. BEST SELLER badge + BT image — tests BT context logic
   {
     id: "prod-002",
     brand: "Calvin Klein",
@@ -55,6 +60,9 @@ export const products: Product[] = [
         id: "v-002a",
         color: { name: "Navy", hex: "#1B2A4A" },
         imageUrl: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&h=800&fit=crop",
+        altImages: ["https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&h=800&fit=crop"],
+        lapelImageUrl: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&h=800&fit=crop",
+        btImageUrl: "https://images.unsplash.com/photo-1592878940526-0214b0f04590?w=600&h=800&fit=crop",
         offerPrice: 999.99,
         listPrice: 1000.99,
         url: "/p/calvin-klein-slim-fit-dress-shirt-navy",
@@ -91,7 +99,7 @@ export const products: Product[] = [
     ],
   },
 
-  // 3. NEW badge — tests alternate badge variant
+  // 3. NEW badge — has lapel, no alt, no BT image (tests mobile lapel + no hover)
   {
     id: "prod-003",
     brand: "Michael Strahan",
@@ -105,6 +113,8 @@ export const products: Product[] = [
         id: "v-003a",
         color: { name: "Navy", hex: "#1B2A4A" },
         imageUrl: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=600&h=800&fit=crop",
+        lapelImageUrl: "https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&h=800&fit=crop",
+        // No altImages — desktop hover should not trigger
         offerPrice: 999.99,
         listPrice: 1000.99,
         url: "/p/michael-strahan-classic-fit-suit-navy",

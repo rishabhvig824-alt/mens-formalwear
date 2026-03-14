@@ -14,6 +14,12 @@ export interface Variant {
   id: string;
   color: Color;
   imageUrl: string | null;
+  /** Alternate images for hover/swipe (index 0 used for desktop hover) */
+  altImages?: string[];
+  /** Lapel/detail shot (alt10) — used as primary on mobile PGP */
+  lapelImageUrl?: string;
+  /** Big & Tall specific image — takes precedence on BT PGP */
+  btImageUrl?: string;
   offerPrice: number;
   listPrice?: number;
   url: string;

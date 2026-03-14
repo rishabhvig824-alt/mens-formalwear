@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Product, Variant } from "@/types/product";
-import { CardImage } from "./CardImage";
+import { CardImage, PageContext } from "./CardImage";
 import { CardPricing } from "./CardPricing";
 import { ColorSwatches } from "./ColorSwatches";
 import { CardInfo } from "./CardInfo";
@@ -11,9 +11,15 @@ import { StarRating } from "./StarRating";
 
 interface ProductCardProps {
   product: Product;
+  cardIndex: number;
+  pageContext?: PageContext;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({
+  product,
+  cardIndex,
+  pageContext = "default",
+}: ProductCardProps) {
   const [selectedVariant, setSelectedVariant] = useState<Variant>(
     product.variants[0]
   );
@@ -22,7 +28,11 @@ export function ProductCard({ product }: ProductCardProps) {
     <article className="bg-white border border-gray-200 rounded-sm overflow-hidden flex flex-col">
       {/* Image links to variant PDP */}
       <a href={selectedVariant.url} tabIndex={-1} aria-hidden="true">
-        <CardImage variant={selectedVariant} />
+        <CardImage
+          variant={selectedVariant}
+          cardIndex={cardIndex}
+          pageContext={pageContext}
+        />
       </a>
 
       <div className="p-3 flex flex-col flex-1">

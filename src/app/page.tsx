@@ -68,7 +68,7 @@ export default function Home() {
           aria-label="Product grid"
           aria-busy={isGridBusy}
         >
-          {products.map((product) => {
+          {products.map((product, index) => {
             const isResolved = resolvedIds.has(product.id);
             return (
               // Wrapper holds dimensions stable during crossfade — prevents CLS
@@ -89,7 +89,11 @@ export default function Home() {
                     isResolved ? "opacity-100" : "opacity-0 pointer-events-none absolute inset-0"
                   }`}
                 >
-                  <ProductCard product={product} />
+                  <ProductCard
+                    product={product}
+                    cardIndex={index}
+                    pageContext="default"
+                  />
                 </div>
               </div>
             );
